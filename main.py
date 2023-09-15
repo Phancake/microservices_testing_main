@@ -38,7 +38,7 @@ def index():
     return jsonify(Product.query.all())
 
 
-@app.route('/api/products/<int:id>/like', methods=['PATCH'])
+@app.route('/api/products/<int:id>/like', methods=['POST'])
 def like(id):
     req = requests.get('http://docker.for.mac.localhost:8000/api/user')
     json = req.json()
